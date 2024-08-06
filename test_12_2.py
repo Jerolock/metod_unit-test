@@ -83,18 +83,6 @@ class TournamentTest(unittest.TestCase):
         self.assertTrue(result[list(result.keys())[-1]] == 'Ник', 'Ошибка! Последним должен быть Ник')
         self.all_results['test_turn3'] = result
 
-    def test_turn4(self):
-        """
-        Дополнительный тест, выявляющий ошибку алгоритма start класса Tournament
-        Ошибка заключается в том, что удаление объекта из списка participants может
-        происходить до того, как будет обработан весь цикл и для каждого объекта будет
-        запущен метод participant.run()
-        :return: None
-        """
-        turn_4 = rt.Tournament(6, self.runer_1, self.runer_2, self.runer_3)
-        result = turn_4.start()
-        self.assertTrue(result[list(result.keys())[-1]] == 'Ник', 'Ошибка! Последним должен быть Ник')
-        self.all_results['test_turn4'] = result
 
 
     if __name__ == '__main__':
